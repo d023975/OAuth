@@ -40,6 +40,23 @@ String urlParameters = "grant_type=authorization_code&code=" + authorizationCode
           + URLEncoder.encode(callback_host + ":" + callback_port + callback_path, "UTF-8") 
           + "&client_id=" + URLEncoder.encode(client_id, "UTF-8");
 ```
+* Authorization server issues an access token and optional refresh
+   token (see https://tools.ietf.org/html/rfc6749#section-4.1.4)
+ ```
+      HTTP/1.1 200 OK
+     Content-Type: application/json;charset=UTF-8
+     Cache-Control: no-store
+     Pragma: no-cache
+
+     {
+       "access_token":"2YotnFZFEjr1zCsicMWpAA",
+       "token_type":"example",
+       "expires_in":3600,
+       "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA",
+       "example_parameter":"example_value"
+     }
+
+ ```
 
      
   
