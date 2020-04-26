@@ -89,6 +89,13 @@ String urlParameters = "grant_type=authorization_code&code=" + authorizationCode
 * no intermediate authorization code is issued
 
 
+### Resource Owner Password Credentials
+* The resource owner password credentials (i.e., username and password) can be used directly as an authorization grant to obtain an access token. 
+
+
+
+### Client Credentials
+* requesting access to protected resources based on an authorization previously arranged with the authorization server.
 
     
   
