@@ -57,7 +57,7 @@ String urlParameters = "grant_type=authorization_code&code=" + authorizationCode
      }
 
  ```
-
-     
+### Implicit Grant
+    
   
 
