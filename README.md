@@ -38,7 +38,7 @@ Info collected from various sources
 
 ## Grants
 ### Authorisation Code Grant ( https://tools.ietf.org/html/rfc6749#section-4.1 )
-* sign into an app using e.g. your Google account
+* sign into an app using e.g. your Google account (user is the Resource Owner in this case)
 * client redirects user agent (e.g. browser) to the auth server's authorization endpoint (see authas_authz_endpoint below) with the following parameters:
   * *response_type*=code
   * *client_id*=" + client_id, OAuth Client identifier
