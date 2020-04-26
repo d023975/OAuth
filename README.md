@@ -13,6 +13,7 @@ Info collected from various sources
 ## Grants
 * Authorisation Code Grant
   * sign into an app using e.g. your Google account
+  * client redirects user to the auth server (see authas_authz_endpoint below) with the following parameters:
   * *response_type*=code
   * *client_id*=" + client_id, OAuth Client identifier
   * *redirect_uri*=" + callback_host + ":" + callback_port + callback_path - optional, without user will be redirected to preregistered redirect URL
@@ -24,5 +25,6 @@ Desktop desktop = Desktop.getDesktop();
 desktop.browse(new URI(oauthas_authz_endpoint + "?client_id=" + client_id + "&response_type=code&redirect_uri=" + callback_host + ":"
                     + callback_port + callback_path + "&scope=" + URLEncoder.encode(scopes, "UTF-8")));
  ```
+ 
   
 
