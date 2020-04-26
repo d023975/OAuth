@@ -13,7 +13,7 @@ Info collected from various sources
 ## Grants
 ### Authorisation Code Grant ( https://tools.ietf.org/html/rfc6749#section-4.1 )
 * sign into an app using e.g. your Google account
-* client redirects user agent (e.g. browser) to the auth server (see authas_authz_endpoint below) with the following parameters:
+* client redirects user agent (e.g. browser) to the auth server's authorization endpoint (see authas_authz_endpoint below) with the following parameters:
   * *response_type*=code
   * *client_id*=" + client_id, OAuth Client identifier
   * *redirect_uri*=" + callback_host + ":" + callback_port + callback_path - optional, without user will be redirected to preregistered redirect URL
@@ -28,6 +28,18 @@ desktop.browse(new URI(oauthas_authz_endpoint + "?client_id=" + client_id + "&re
 * User approves the request => user agent will be redirected by the authoritzation server back to the client using *redirect_uri* with the params 
   * *code* the authorization code
   * *state* the CSRF state from above (2B checked)
+  
+* The client sends a POST request to the authorization servers token endpoint with the following parameters
+  * *client_id*
+  * *grant_type*="authorization_code"
+  * *code*="authorizationCode"
+  * *redirect_uri*=URLEncoder.encode(callback_host + ":" + callback_port + callback_path, "UTF-8")
+
+```
+String urlParameters = "grant_type=authorization_code&code=" + authorizationCode + "&redirect_uri="
+          + URLEncoder.encode(callback_host + ":" + callback_port + callback_path, "UTF-8") 
+          + "&client_id=" + URLEncoder.encode(client_id, "UTF-8");
+```
 
      
   
