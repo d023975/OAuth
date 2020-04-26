@@ -30,6 +30,12 @@ Info collected from various sources
      |        |<-(F)--- Protected Resource ---|               |
      +--------+                               +---------------+
 ```
+(B)-- Authorization Grant
+* authorization code
+* implicit
+* resource owner password credentials
+* client credentials
+
 ## Grants
 ### Authorisation Code Grant ( https://tools.ietf.org/html/rfc6749#section-4.1 )
 * sign into an app using e.g. your Google account
