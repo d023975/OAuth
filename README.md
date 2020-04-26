@@ -11,6 +11,25 @@ Info collected from various sources
 * authorization server (User Account and Authentication (UAA) service) 
   * o	issues access tokens for the client to obtain the authorizations of the resource owner after he was successfully authenticated by e.g. a SAML 2.0 compliant identity provider
 ## Protocol Flow -> https://tools.ietf.org/html/rfc6749#section-1.2
+```
+     +--------+                               +---------------+
+     |        |--(A)- Authorization Request ->|   Resource    |
+     |        |                               |     Owner     |
+     |        |<-(B)-- Authorization Grant ---|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(C)-- Authorization Grant -->| Authorization |
+     | Client |                               |     Server    |
+     |        |<-(D)----- Access Token -------|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(E)----- Access Token ------>|    Resource   |
+     |        |                               |     Server    |
+     |        |<-(F)--- Protected Resource ---|               |
+     +--------+                               +---------------+
+```
 ## Grants
 ### Authorisation Code Grant ( https://tools.ietf.org/html/rfc6749#section-4.1 )
 * sign into an app using e.g. your Google account
