@@ -1,0 +1,27 @@
+# Generated artifacts
+target/
+bin/
+
+# Auto-generated API descriptions
+src/main/resources/static/api/swagger.json
+src/main/resources/static/api/console/api.raml
+
+# Log files
+logs/
+
+# Eclipse project description file
+.project
+
+# Eclipse preferences
+.settings/
+.classpath
+
+# IntelliJ project specific settings
+*.iml
+.idea/
+
+# Mac users - hidden file to store custom attributes for folders
+.DS_Store
+
+# Maven
+.mvn/
