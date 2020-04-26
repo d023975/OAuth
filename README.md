@@ -99,4 +99,6 @@ String urlParameters = "grant_type=authorization_code&code=" + authorizationCode
 
     
 ## Client Registration ( https://tools.ietf.org/html/rfc6749#section-2 )  
-
+* client registers with the authorization server
+  * The authorization server issues the registered client a client identifier 
+  ```cf create-service xsuaa broker xsnodsbf-broker-uaa -c xs-security.json ```
