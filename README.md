@@ -12,22 +12,23 @@ Info collected from various sources
   * o	issues access tokens for the client to obtain the authorizations of the resource owner after he was successfully authenticated by e.g. a SAML 2.0 compliant identity provider
 ## Grants
 ### Authorisation Code Grant ( https://tools.ietf.org/html/rfc6749#section-4.1 )
-  * sign into an app using e.g. your Google account
-  * client redirects user to the auth server (see authas_authz_endpoint below) with the following parameters:
-  * *response_type*=code
-  * *client_id*=" + client_id, OAuth Client identifier
-  * *redirect_uri*=" + callback_host + ":" + callback_port + callback_path - optional, without user will be redirected to preregistered redirect URL
-  * *scope* "&scope=" + URLEncoder.encode(scopes, "UTF-8") , private static String scopes = "view-message create-message";
-  * *state* for CSRF
+* sign into an app using e.g. your Google account
+* client redirects user agent (e.g. browser) to the auth server (see authas_authz_endpoint below) with the following parameters:
+* *response_type*=code
+* *client_id*=" + client_id, OAuth Client identifier
+* *redirect_uri*=" + callback_host + ":" + callback_port + callback_path - optional, without user will be redirected to preregistered redirect URL
+* *scope* "&scope=" + URLEncoder.encode(scopes, "UTF-8") , private static String scopes = "view-message create-message";
+* *state* for CSRF
   
  ```
 Desktop desktop = Desktop.getDesktop();
 desktop.browse(new URI(oauthas_authz_endpoint + "?client_id=" + client_id + "&response_type=code&redirect_uri=" + callback_host + ":"
                     + callback_port + callback_path + "&scope=" + URLEncoder.encode(scopes, "UTF-8")));
  ```
-* User approves the request => client will be redirected back to *redirect_uri* with the params 
-   * *code* the authorization code
-   * *state* the CSRF state from above (2B checked)
+* User approves the request => user agent will be redirected by the authoritzation server back to the client using *redirect_uri* with the params 
+  * *code* the authorization code
+  * *state* the CSRF state from above (2B checked)
+
      
   
 
