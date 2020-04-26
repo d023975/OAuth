@@ -84,6 +84,12 @@ String urlParameters = "grant_type=authorization_code&code=" + authorizationCode
 
  ```
 ### Implicit Grant
+* simplified flow for clients which are part of the user agent, i.e. the client is implemented in the browser e.g. within a single page web app
+* the client is issued an access token directly (as result of the resource owner authorization)
+* no intermediate authorization code is issued
+
+
+
     
   
 
