@@ -98,5 +98,5 @@ String urlParameters = "grant_type=authorization_code&code=" + authorizationCode
 * requesting access to protected resources based on an authorization previously arranged with the authorization server.
 
     
-  
+## Client Registration ( https://tools.ietf.org/html/rfc6749#section-2 )  
 
