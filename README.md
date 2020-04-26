@@ -104,6 +104,13 @@ String urlParameters = "grant_type=authorization_code&code=" + authorizationCode
 
 ### Resource Owner Password Credentials
 * The resource owner password credentials (i.e., username and password) can be used directly as an authorization grant to obtain an access token. 
+* The client will ask the user for their authorization credentials (ususally a username and password).
+* The client then sends a POST request with following body parameters to the authorization server ( https://tools.ietf.org/html/rfc6749#section-4.3.2 ):
+  * *grant_type* with the value password
+  * *scope* with a space-delimited list of requested scope permissions.
+  * *username* with the user’s username
+  * *password* with the user’s password
+* The authorization server will respond with a JSON object containing the following properties:
 
 
 
