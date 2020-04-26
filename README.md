@@ -87,6 +87,19 @@ String urlParameters = "grant_type=authorization_code&code=" + authorizationCode
 * simplified flow for clients which are part of the user agent, i.e. the client is implemented in the browser e.g. within a single page web app
 * the client is issued an access token directly (as result of the resource owner authorization)
 * no intermediate authorization code is issued
+* The client will redirect the user to the authorization server with the following parameters in the query string:
+  * *response_type* with the value token
+  * *client_id* with the client identifier
+  * *redirect_uri*
+  * *scope* a space delimited list of scopes
+  * *state* with a CSRF token
+* The authorization server authenticates the resource owner
+* The authorization server redirects the user-agent back to the client using the redirection URI with the following parameters in the query string
+  * *token_type* with the value Bearer
+  * *expires_in* with an integer representing the TTL of the access token
+  * *access_token* the access token itself
+  * *state* with the state parameter sent in the original request
+
 
 
 ### Resource Owner Password Credentials
