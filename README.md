@@ -11,7 +11,7 @@ Info collected from various sources
 * authorization server (User Account and Authentication (UAA) service) 
   * o	issues access tokens for the client to obtain the authorizations of the resource owner after he was successfully authenticated by e.g. a SAML 2.0 compliant identity provider
 ## Grants
-### Authorisation Code Grant
+### Authorisation Code Grant ( https://tools.ietf.org/html/rfc6749#section-4.1 )
   * sign into an app using e.g. your Google account
   * client redirects user to the auth server (see authas_authz_endpoint below) with the following parameters:
   * *response_type*=code
