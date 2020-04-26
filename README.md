@@ -110,8 +110,21 @@ String urlParameters = "grant_type=authorization_code&code=" + authorizationCode
   * *scope* with a space-delimited list of requested scope permissions.
   * *username* with the user’s username
   * *password* with the user’s password
-* The authorization server will respond with a JSON object containing the following properties:
+* The authorization server will respond with a JSON object. The authorization server issues an access token and optional refresh token
+```
+     HTTP/1.1 200 OK
+     Content-Type: application/json;charset=UTF-8
+     Cache-Control: no-store
+     Pragma: no-cache
 
+     {
+       "access_token":"2YotnFZFEjr1zCsicMWpAA",
+       "token_type":"example",
+       "expires_in":3600,
+       "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA",
+       "example_parameter":"example_value"
+     }
+```
 
 
 ### Client Credentials
