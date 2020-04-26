@@ -25,6 +25,9 @@ Desktop desktop = Desktop.getDesktop();
 desktop.browse(new URI(oauthas_authz_endpoint + "?client_id=" + client_id + "&response_type=code&redirect_uri=" + callback_host + ":"
                     + callback_port + callback_path + "&scope=" + URLEncoder.encode(scopes, "UTF-8")));
  ```
- 
+* User approves the request => client will be redirected back to *redirect_uri* with the params 
+   * *code* the authorization code
+   * *state* the CSRF state from above (2B checked)
+     
   
 
