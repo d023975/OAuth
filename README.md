@@ -16,6 +16,7 @@ Info collected from various sources
   * response_type=code
   * client_id=" + client_id, OAuth Client identifier
   * redirect_uri=" + callback_host + ":" + callback_port + callback_path - optional, without user will be redirected to preregistered redirect URL
+  * scope "&scope=" + URLEncoder.encode(scopes, "UTF-8") , private static String scopes = "view-message create-message";
   
   
   
