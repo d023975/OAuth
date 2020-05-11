@@ -135,3 +135,7 @@ String urlParameters = "grant_type=authorization_code&code=" + authorizationCode
 * client registers with the authorization server
   * The authorization server issues the registered client a client identifier e.g.
   ```cf create-service xsuaa broker xsnodsbf-broker-uaa -c xs-security.json ```
+
+
+# OpenID Connect
+finde more info here: https://openid.net/connect/
